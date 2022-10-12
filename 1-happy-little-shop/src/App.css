@@ -1,0 +1,20 @@
+.main {
+  overflow: hidden;
+}
+
+.brands {
+  position: relative;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 4rem 0 2rem 0;
+}
+
+.brands::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2rem;
+  width: 4rem;
+  height: 0.125rem;
+  background-color: var(--secondary-highlight-color);
+}

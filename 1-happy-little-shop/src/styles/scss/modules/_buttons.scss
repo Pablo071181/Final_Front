@@ -1,0 +1,40 @@
+.buttons {
+  @include d-flex-fd-ai-jc-g(row, center, center, 0.75rem);
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--primary-theme-color);
+  border: 0.0625rem solid var(--primary-theme-color);
+  border-radius: var(--primary-border-radius);
+  color: var(--primary-text-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  font-family: var(--primary-font-family);
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 2rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 0.25s, border 0.25s, box-shadow 0.25s, color 0.25s, filter 0.25s;
+
+  @include desktop {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.125rem 0.125rem var(--primary-theme-color);
+    filter: contrast(1.125);
+  }
+
+  &--primary {
+    background-color: var(--primary-button-color);
+    border: 0.0625rem solid var(--primary-button-color);
+    color: var(--primary-text-color);
+
+    &:hover {
+      box-shadow: 0 0 0.125rem 0.125rem var(--primary-button-color);
+    }
+  }
+}

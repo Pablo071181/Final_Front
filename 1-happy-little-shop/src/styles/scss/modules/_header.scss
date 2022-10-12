@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  z-index: 25;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: left 0.25s, background-color 0.25s, box-shadow 0.25s;
+
+  &--open {
+    left: -50%;
+  }
+
+  &--scroll {
+    background-color: var(--primary-theme-color);
+    box-shadow: 0 0 0.0625rem 0.0625rem var(--primary-shadow-color);
+  }
+
+  @include desktop {
+    left: 0;
+  }
+}

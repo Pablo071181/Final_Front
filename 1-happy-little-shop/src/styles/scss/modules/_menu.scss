@@ -1,0 +1,75 @@
+.menu {
+  @include d-flex-fd-ai-jc-g(row, stretch, flex-start, 0.5rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &--header {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    background-image: linear-gradient(to top, var(--reverse-primary-shadow-color), var(--reverse-secondary-shadow-color));
+    width: 50%;
+    height: 100%;
+    margin-left: auto;
+    cursor: auto;
+    transform: translateX(var(--translate-menu));
+    transition: transform 0.25s;
+
+    @include desktop {
+      flex-direction: row;
+      background-image: none;
+      width: auto;
+    }
+  }
+
+  &--footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    position: relative;
+    color: var(--primary-text-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.25s;
+
+    &:hover,
+    &--active {
+      color: var(--primary-highlight-color);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 0.0625rem;
+      background-color: var(--secondary-highlight-color);
+      transition: width 0.25s;
+    }
+
+    &:hover::before,
+    &--active::before {
+      width: 100%;
+    }
+  }
+}
+
+.modal--menu .menu__link {
+  color: var(--reverse-primary-text-color);
+
+  &:hover,
+  &--active {
+    color: var(--primary-highlight-color);
+  }
+}
+
+.header--scroll .menu__link {
+  @include desktop {
+    color: var(--primary-text-color);
+  }
+}
